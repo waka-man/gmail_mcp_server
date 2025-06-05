@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "gmail": {
+      "autoApprove": [],
+      "disabled": false,
+      "timeout": 300,
+      "command": "~/Documents/Cline/MCP/gmail-mcp-server/gmail_mcp_server.py",
+      "args": [],
+      "env": {
+        "GMAIL_EMAIL": "<YOUR EMAIL>",
+        "GMAIL_APP_PASSWORD": "<YOUR GOOGLE APP PASSWORD>"
+      },
+      "transportType": "stdio"
+    }
+  }
+}
