@@ -59,7 +59,7 @@ def handle_list_tools(request):
 
 def handle_call_tool(request):
     print("Entering handle_call_tool.", file=sys.stderr)
-    # TODO: Implement logic to call the specified tool
+    # Call the requested tool if it is recognized
     tool_name = request.get("params", {}).get("name")
     arguments = request.get("params", {}).get("arguments", {})
 
