@@ -73,6 +73,20 @@ def handle_get_unread_emails(request_id, arguments):
     gmail_email = os.environ.get('GMAIL_EMAIL')
     gmail_app_password = os.environ.get('GMAIL_APP_PASSWORD')
     max_emails = arguments.get('max_emails')
+    if max_emails is not None:
+        try:
+            max_emails = int(max_emails)
+            if max_emails < 0:
+                raise ValueError
+        except (ValueError, TypeError):
+            return {
+                "jsonrpc": "2.0",
+                "id": request_id,
+                "result": {
+                    "content": [{"type": "text", "text": "Invalid 'max_emails' value."}],
+                    "isError": True
+                }
+            }
 
     if not gmail_email or not gmail_app_password:
         return {
