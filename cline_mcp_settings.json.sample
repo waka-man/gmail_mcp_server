@@ -7,7 +7,7 @@
       "command": "~/Documents/Cline/MCP/gmail-mcp-server/gmail_mcp_server.py",
       "args": [],
       "env": {
-        "GMAIL_EMAIL": "<YOUR EMAIL>",
+        "GMAIL_EMAIL": "<YOUR_GMAIL_ADDRESS>",
         "GMAIL_APP_PASSWORD": "<YOUR GOOGLE APP PASSWORD>"
       },
       "transportType": "stdio"
