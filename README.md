@@ -75,4 +75,24 @@ This server is designed to be used with an MCP client. It communicates over stan
 }
 ```
 
-This will return a JSON array of unread email objects, each containing `id`, `from`, `to`, `subject`, `date`, and a `body_preview`.
+This call returns an RPC response where the JSON array of unread email objects
+is provided as a text block. The array is encoded in
+`result.content[0].text` rather than being returned directly as a JSON array.
+
+**Example RPC Response:**
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[\n  {\n    \"id\": \"1\",\n    \"from\": \"sender@example.com\",\n    \"to\": \"your_gmail_address@gmail.com\",\n    \"subject\": \"Hello\",\n    \"date\": \"Mon, 1 Jan 2024 00:00:00 +0000\",\n    \"body_preview\": \"Sample body...\"\n  }\n]"
+      }
+    ],
+    "isError": false
+  }
+}
+```
