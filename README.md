@@ -52,7 +52,7 @@ This server is designed to be used with an MCP client. It communicates over stan
   "properties": {
     "max_emails": {
       "type": "number",
-      "description": "Maximum number of unread emails to fetch",
+      "description": "Maximum number of unread emails to fetch. Must be a non-negative integer.",
       "optional": true
     }
   }
